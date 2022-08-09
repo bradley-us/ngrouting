@@ -1,0 +1,11 @@
+<h1>Bienvenido</h1>
+
+<!-- Login -->
+
+<a routerLink="/login">Login</a>
+
+<button (click)="navigateToContacts()">Ver contactos</button>
+<br>
+<a [routerLink]="['/contacts']" [queryParams]="{sex: 'woman'}">Mujeres | Women</a>
+<br>
+<a [routerLink]="['/contacts']" [queryParams]="{sex: 'man'}">Hombres | Men</a>
