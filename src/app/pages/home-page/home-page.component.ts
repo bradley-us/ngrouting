@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
+import { IContact } from 'src/app/models/contact.interface';
 
 @Component({
   selector: 'app-home-page',
@@ -9,9 +10,15 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
+  selectedContact: IContact | undefined;
+
   constructor(private router: Router) { }
 
   ngOnInit(): void {
+    // Leemos el estado del historial de navegación
+    if(history.state.data) {
+      this.selectedContact = history.state.data;
+    }
   }
 
   navigateToContacts(): void {

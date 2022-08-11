@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from './modules/material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -15,6 +15,8 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { NotFoundPageComponent } from './pages/not-found-page/not-found-page.component';
 import { LoginFormComponent } from './components/login-form/login-form.component';
 import { FullnamePipe } from './pipes/fullname.pipe';
+import { RandomUserComponent } from './components/random-user/random-user.component';
+import { RandomContactPageComponent } from './pages/random-contact-page/random-contact-page.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { FullnamePipe } from './pipes/fullname.pipe';
     LoginPageComponent,
     NotFoundPageComponent,
     LoginFormComponent,
-    FullnamePipe
+    FullnamePipe,
+    RandomUserComponent,
+    RandomContactPageComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,8 @@ import { FullnamePipe } from './pipes/fullname.pipe';
     // Formularios Reactivos:
     ReactiveFormsModule,
     // Módulo personalizado de Angular Material
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

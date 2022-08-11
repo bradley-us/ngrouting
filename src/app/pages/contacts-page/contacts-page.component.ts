@@ -35,7 +35,7 @@ export class ContactsPageComponent implements OnInit {
 
   }
 
-  goBackHome(contact: IContact) {
+  goBackHomeAndSelectHiddenFriend(contact: IContact) {
     let navigationExtras: NavigationExtras = {
       state: {
         data: contact

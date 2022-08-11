@@ -1,11 +1,27 @@
 <h1>Bienvenido</h1>
 
+
 <!-- Login -->
+<ng-container *ngIf="selectedContact; else noSelected">
+  <h4>Tu Amigo Invisible es: {{ selectedContact.name }}</h4>
+</ng-container>
+
+<ng-template #noSelected>
+  <div>
+    <p>Selecciona a tu amigo invisible.</p>
+  </div>
+</ng-template>
+
 
 <a routerLink="/login">Login</a>
 
-<button (click)="navigateToContacts()">Ver contactos</button>
+<button (click)="navigateToContacts()">Ver todos tus contactos</button>
+
 <br>
-<a [routerLink]="['/contacts']" [queryParams]="{sex: 'woman'}">Mujeres | Women</a>
-<br>
-<a [routerLink]="['/contacts']" [queryParams]="{sex: 'man'}">Hombres | Men</a>
+
+<div>
+  <h3>Filtros:</h3>
+  <a [routerLink]="['/contacts']" [queryParams]="{sex: 'woman'}">Mujeres | Women</a>
+  <br>
+  <a [routerLink]="['/contacts']" [queryParams]="{sex: 'man'}">Hombres | Men</a>
+</div>
