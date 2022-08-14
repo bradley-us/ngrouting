@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { IRandomUser, Results } from 'src/app/mock/randomuser.interface';
+import { IRandomUser, Results } from 'src/app/models/randomuser.interface';
 
 @Component({
   selector: 'app-random-user',

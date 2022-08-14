@@ -1,8 +1,8 @@
-<ng-container *ngIf="contact.email; else contactError">
-  <h1>Contact: {{ id }}</h1>
+<ng-container *ngIf="contact?.email; else contactError">
+  <h1>Contact: {{ contact?.id?.name }}</h1>
 
-  <h2>Name: {{ contact.name }}</h2>
-  <p>Email: {{ contact.email }}</p>
+  <h2>Name: {{ contact! | fullname}}</h2>
+  <p>Email: {{ contact?.email }}</p>
 </ng-container>
 
 <ng-template #contactError>

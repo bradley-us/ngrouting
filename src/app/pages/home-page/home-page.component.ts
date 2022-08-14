@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { Router } from '@angular/router';
-import { IContact } from 'src/app/models/contact.interface';
+import { IRandomUser } from 'src/app/models/randomuser.interface';
 
 @Component({
   selector: 'app-home-page',
@@ -10,7 +10,7 @@ import { IContact } from 'src/app/models/contact.interface';
 })
 export class HomePageComponent implements OnInit {
 
-  selectedContact: IContact | undefined;
+  selectedContact: IRandomUser | undefined;
 
   constructor(private router: Router) { }
 

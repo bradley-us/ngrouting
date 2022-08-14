@@ -1,13 +1,13 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { IContact } from '../models/contact.interface';
+import { IRandomUser } from '../models/randomuser.interface';
 
 @Pipe({
   name: 'fullname'
 })
 export class FullnamePipe implements PipeTransform {
 
-  transform(contact: IContact, ...args: unknown[]): string {
-    return `${ contact.name } ${ contact.lastName }`;
+  transform(contact: IRandomUser, ...args: unknown[]): string {
+    return `${ contact.name.title } ${ contact.name.first } ${ contact.name.last }`;
   }
 
 }

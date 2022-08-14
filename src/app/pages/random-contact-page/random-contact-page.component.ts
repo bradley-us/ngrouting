@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { IRandomUser, Results } from 'src/app/mock/randomuser.interface';
+import { IRandomUser, Results } from 'src/app/models/randomuser.interface';
 import { RandomUserService } from 'src/app/services/random-user.service';
 
 @Component({
@@ -28,7 +28,7 @@ export class RandomContactPageComponent implements OnInit {
     this.randomUserService.obtainRandomUser().subscribe(
       {
         next: (res: Results) => {
-          this.contact = res.results[0];
+          this.contact = res.results[0]; // Se lo pasaremos al RandomContact
         },
         error: (error: any) => console.log(`[ERROR]: ${error}`),
         complete: () => console.info('Petición de random contact terminada.')
@@ -39,7 +39,7 @@ export class RandomContactPageComponent implements OnInit {
   obtainContactsList(n: number) {
     this.randomUserService.obtainRandomUsers(n).subscribe(
       {
-        next: (res: Results[]) => {
+        next: (res: Results) => {
           console.log(res);
         },
         error: (error: any) => console.log(`[ERROR]: ${error}`),
