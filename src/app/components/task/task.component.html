@@ -1,0 +1,4 @@
+<div *ngIf="task" [ngClass]="{'urgent-task': task.level === 1, 'blocking-task': task.level === 2, 'info-task': task.level === 0}">
+  <h2>{{ task.title }}</h2>
+  <h3>{{ task.description }}</h3>
+</div>

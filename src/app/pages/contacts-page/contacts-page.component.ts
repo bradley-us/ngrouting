@@ -12,6 +12,7 @@ import { RandomUserService } from 'src/app/services/random-user.service';
 })
 export class ContactsPageComponent implements OnInit {
 
+  isLoading: boolean = true;
   sexFilter: string = 'all';
   // contactsList: IContact[] = [];
   randomContactsList: IRandomUser[] = [];
@@ -39,7 +40,10 @@ export class ContactsPageComponent implements OnInit {
                 console.log(this.randomContactsList)
               },
               error: (error: any) => console.log(`[ERROR]: ${error}`),
-              complete: () => console.info('Petición de random contact terminada.')
+              complete: () => {
+                console.info('Petición de random contact terminada.')
+                this.isLoading = false;
+              }
             }
           )
         } else {
@@ -53,7 +57,10 @@ export class ContactsPageComponent implements OnInit {
                 console.log(this.randomContactsList)
               },
               error: (error: any) => console.log(`[ERROR]: ${error}`),
-              complete: () => console.info('Petición de random contact terminada.')
+              complete: () => {
+                console.info('Petición de random contact terminada.')
+                this.isLoading = false;
+              }
             }
           )
         }
@@ -76,7 +83,7 @@ export class ContactsPageComponent implements OnInit {
       }
     };
 
-    this.router.navigate(['/home'], navigationExtras);
+    this.router.navigate(['/dashboard/home'], navigationExtras);
   }
 
 }

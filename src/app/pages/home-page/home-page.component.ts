@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Router } from '@angular/router';
+import { NavigationExtras, Router } from '@angular/router';
 import { IRandomUser } from 'src/app/models/randomuser.interface';
 
 @Component({
@@ -22,6 +22,11 @@ export class HomePageComponent implements OnInit {
   }
 
   navigateToContacts(): void {
-    this.router.navigate(['contacts'])
+    let navigationExtras: NavigationExtras = {
+      queryParams: {
+        sex: 'all'
+      }
+    }
+    this.router.navigate(['dashboard/contacts'], navigationExtras)
   }
 }
